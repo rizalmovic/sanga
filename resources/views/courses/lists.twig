@@ -1,0 +1,13 @@
+{% extends 'theme::layouts/default' %}
+
+{% block content %}
+<div class="row">
+    {% for d in data %}
+        <div class="col-md-3">
+            <img class="img img-rounded img-responsive" src="https://placeimg.com/400/400/animals/{{d.id}}" alt="{{d.name}}">
+            {{ d.name.value }}
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

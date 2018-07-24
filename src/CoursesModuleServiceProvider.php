@@ -60,6 +60,7 @@ class CoursesModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $routes = [
+        '/courses' => 'Sanga\CoursesModule\Http\Controller\CoursesController@index',
         'admin/courses/students'           => 'Sanga\CoursesModule\Http\Controller\Admin\StudentsController@index',
         'admin/courses/students/create'    => 'Sanga\CoursesModule\Http\Controller\Admin\StudentsController@create',
         'admin/courses/students/edit/{id}' => 'Sanga\CoursesModule\Http\Controller\Admin\StudentsController@edit',
