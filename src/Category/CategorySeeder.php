@@ -17,8 +17,7 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        $this->categories->truncate();
-        $this->categories->create(
+        $categories = [
             [
                 'en' => [
                     'name' => 'Big Data'
@@ -55,6 +54,12 @@ class CategorySeeder extends Seeder
                 ],
                 'slug' => 'itsm'
             ]
-        );
+        ];
+
+        $this->categories->truncate();
+        
+        foreach($categories as $category) {
+            $this->categories->create($category);
+        }
     }
 }

@@ -2,15 +2,18 @@
 
 use Anomaly\Streams\Platform\Database\Seeder\Seeder;
 use Sanga\CoursesModule\Lecturer\Contract\LecturerRepositoryInterface;
+use Faker\Generator;
 
 class LecturerSeeder extends Seeder
 {
 
     public $lecturers;
+    public $faker;
 
-    public function __construct(LecturerRepositoryInterface $lecturers)
+    public function __construct(LecturerRepositoryInterface $lecturers, Generator $faker)
     {
         $this->lecturers = $lecturers;
+        $this->faker = $faker;
     }
 
     /**
@@ -31,6 +34,21 @@ class LecturerSeeder extends Seeder
                 'enabled' => true
             ]
         );
+
+        for($i = 0; $i < 10; $i++) {
+            $this->lecturers->create(
+                [
+                    'name' => $this->faker->name,
+                    'email' => $this->faker->email,
+                    'en' => [
+                        'description' => $this->faker->paragraph(4)
+                    ],
+                    'photo' => null,
+                    'featured' => false,
+                    'enabled' => true
+                ]
+            );
+        }
     }
 
 

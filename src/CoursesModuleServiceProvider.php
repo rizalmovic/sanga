@@ -66,6 +66,7 @@ class CoursesModuleServiceProvider extends AddonServiceProvider
         'admin/courses/schedules'           => 'Sanga\CoursesModule\Http\Controller\Admin\SchedulesController@index',
         'admin/courses/schedules/create'    => 'Sanga\CoursesModule\Http\Controller\Admin\SchedulesController@create',
         'admin/courses/schedules/edit/{id}' => 'Sanga\CoursesModule\Http\Controller\Admin\SchedulesController@edit',
+        'admin/courses/schedules/add/{id}' => 'Sanga\CoursesModule\Http\Controller\Admin\SchedulesController@add',
         'admin/courses/categories'           => 'Sanga\CoursesModule\Http\Controller\Admin\CategoriesController@index',
         'admin/courses/categories/create'    => 'Sanga\CoursesModule\Http\Controller\Admin\CategoriesController@create',
         'admin/courses/categories/edit/{id}' => 'Sanga\CoursesModule\Http\Controller\Admin\CategoriesController@edit',

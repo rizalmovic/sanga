@@ -17,14 +17,39 @@ class ScheduleTableBuilder extends TableBuilder
      *
      * @var array|string
      */
-    protected $filters = [];
+    protected $filters = [
+        'course',
+        'start_on'
+    ];
 
     /**
      * The table columns.
      *
      * @var array|string
      */
-    protected $columns = [];
+    protected $columns = [
+        'name' => [
+            'wrapper' => '{value.title}<br/><small>{value.address}</small>',
+            'value' => [
+                'title' => 'entry.name',
+                'address' => 'entry.address'
+            ]
+        ],
+        'course',
+        'start_on' => [
+            'value' => 'entry.start_on.format("d F Y")'
+        ],
+        'end_on' => [
+            'value' => 'entry.end_on.format("d F Y")'
+        ],
+        'seats' => [
+            'heading' => 'Available Seat',
+            'value' => 'entry.availableSeat'
+        ],
+        'participants' => [
+            'value' => 'entry.participants.count',
+        ]
+    ];
 
     /**
      * The table buttons.
@@ -32,6 +57,7 @@ class ScheduleTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $buttons = [
+        'add',
         'edit'
     ];
 

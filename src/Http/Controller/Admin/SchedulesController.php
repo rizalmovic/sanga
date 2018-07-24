@@ -1,6 +1,7 @@
 <?php namespace Sanga\CoursesModule\Http\Controller\Admin;
 
 use Sanga\CoursesModule\Schedule\Form\ScheduleFormBuilder;
+use Sanga\CoursesModule\Schedule\Form\ParticipantFormBuilder;
 use Sanga\CoursesModule\Schedule\Table\ScheduleTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
 
@@ -37,6 +38,18 @@ class SchedulesController extends AdminController
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function edit(ScheduleFormBuilder $form, $id)
+    {
+        return $form->render($id);
+    }
+
+    /**
+     * Add participants
+     *
+     * @param ParticipantFormBuilder $form
+     * @param int $id
+     * @return void
+     */
+    public function add(ParticipantFormBuilder $form, $id)
     {
         return $form->render($id);
     }

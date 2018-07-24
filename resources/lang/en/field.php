@@ -16,6 +16,9 @@ return [
     'code' => [
         'name' => 'Code'
     ],
+    'course' => [
+        'name' => 'Course'
+    ],
     'address' => [
         'name' => 'Address'
     ],
