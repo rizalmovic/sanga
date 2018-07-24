@@ -1,0 +1,9 @@
+{
+    "name": "sanga/courses-module",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Sanga\\CoursesModule\\": "src/"
+        }
+    }
+}
